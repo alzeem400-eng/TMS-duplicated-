@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-secondary-800 antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-secondary-200 bg-white shadow-sm;
+  }
+}
+
+/* Print styles for reports */
+@media print {
+  body {
+    background: white !important;
+  }
+  .print\:hidden {
+    display: none !important;
+  }
+  .print\:p-0 {
+    padding: 0 !important;
+  }
+  .print\:border-0 {
+    border: 0 !important;
+  }
+  .print\:max-w-none {
+    max-width: none !important;
+  }
+  .report-header {
+    border-bottom: 2px solid #94a3b8 !important;
+    padding-bottom: 1rem !important;
+  }
+  table {
+    page-break-inside: auto;
+  }
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  thead {
+    display: table-header-group;
+  }
+}
